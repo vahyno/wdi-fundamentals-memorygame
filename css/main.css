@@ -1,0 +1,72 @@
+
+body {
+	margin: 0; /*as per assigment to remove space around edges*/
+	background: gold; /*test color background*/
+	/*background-image: url("https://img-aws.ehowcdn.com/877x500p/photos.demandstudios.com/getty/article/92/1/481412413.jpg");*/
+	text-align: center;
+}
+
+header {
+	background-color: #F15B31;
+	color: #FFFFFF;
+	padding: 30px 20px;
+}
+
+nav {
+	background-color: #00A6B3;
+	color: #FFFFFF;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+footer {
+	background-color: grey; /*test color background*/
+	text-align: center;
+}
+
+main {
+	width: 850px;
+	margin: 35px auto;
+}
+
+h1 {
+	font-family: "Raleway", sans-serif;
+	color: #FFFFFF: /*#0d2c40;*/
+	letter-spacing: 1px;
+	font-weight: 400;
+	font-size: 45px;
+	text-transform: uppercase;
+	margin: 0;  /*as per assigment so our header takes up a little less space*/
+}
+
+h2 {
+	font-family: "Raleway", sans-serif;
+	color: #0d2c40;
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 20px;
+	text-transform: uppercase;	
+}
+
+a {
+	font-family: "Raleway", sans-serif;
+	color: #FFFFFF; /*#f15b31;*/
+	letter-spacing: 1px;
+	font-weight: 600;
+	font-size: 18px;
+
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-right:20px;
+	margin-left:20px;
+}
+
+p {
+	font-family: "Droid Serif", serif;
+	line-height: 26px;
+	font-size: 18px;
+}
+
+img {
+	margin: 40px 8px auto 8px;
+}
