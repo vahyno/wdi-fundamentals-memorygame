@@ -2,15 +2,39 @@ console.log("Up and running!");
 
 alert('Hello Friend, How about a nice game of Pexeso?');
 
-var cards = ["queen", "queen", "king", "king"];
+//var cards = ["queen", "queen", "king", "king"];  //prior Unit 10 Assignments
+var cards = [
+	{
+		rank : "queen",
+		suit : "hearts",
+		cardImage : "images/queen-of-hearts.png"
+	},
+	{
+		rank : "queen",
+		suit : "diamonds",
+		cardImage : "images/queen-of-diamonds.png"
+	},
+	{
+		rank : "king",
+		suit : "hearts",
+		cardImage : "images/king-of-hearts.png"
+	},
+	{
+		rank : "king",
+		suit : "diamonds",
+		cardImage : "images/king-of-diamonds.png"
+	}
+]
 var cardsInPlay = [];
 
 function checkForMatch(){
 	if (cardsInPlay.length === 2){
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			console.log("You found a match!");
+			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
 			alert("You found a match!");
 		} else {
+			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
 			console.log("Sorry, try again.");
 			alert("Sorry, try again.");
 		}
@@ -18,13 +42,17 @@ function checkForMatch(){
 }
 
 function flipCard(cardId){
-	console.log("User flipped " + cards[cardId]+".");
-	cardsInPlay.push(cards[cardId]);
-	checkForMatch();
+	console.log("User flipped " + cards[cardId].rank +".");
+	cardsInPlay.push(cards[cardId].rank);
+	console.log("suit: " + cards[cardId].suit);
+	console.log("cardImage: "+ cards[cardId].cardImage);
+	console.log("push test: "+ cardsInPlay[cardsInPlay.length-1]); //testing what gets pushed
+	checkForMatch(); //running checkForMatch function
 }
 
 flipCard(0);
 flipCard(2);
+
 
 //checkForMatch();
 
