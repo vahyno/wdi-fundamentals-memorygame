@@ -1,6 +1,6 @@
 console.log("Up and running!");
 
-alert('Hello Friend, How about a nice game of Pexeso?');
+alert('Hello, How about a game of Pexeso?');
 
 //var cards = ["queen", "queen", "king", "king"];  //prior Unit 10 Assignments
 var cards = [
@@ -27,7 +27,7 @@ var cards = [
 ]
 var cardsInPlay = [];
 
-function checkForMatch(){
+function checkForMatch(){ 
 	if (cardsInPlay.length === 2){
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			console.log("You found a match!");
@@ -41,43 +41,32 @@ function checkForMatch(){
 	}
 }
 
-function flipCard(cardId){
+function flipCard(){												//delete 'cardId' parameter unit 11
+	var cardId = this.getAttribute("data-id");						//added unit 11
 	console.log("User flipped " + cards[cardId].rank +".");
 	cardsInPlay.push(cards[cardId].rank);
 	console.log("suit: " + cards[cardId].suit);
 	console.log("cardImage: "+ cards[cardId].cardImage);
-	console.log("push test: "+ cardsInPlay[cardsInPlay.length-1]); //testing what gets pushed
-	checkForMatch(); //running checkForMatch function
+	
+	//console.log("push test: "+ cardsInPlay[cardsInPlay.length-1]);	//testing what gets pushed
+	this.setAttribute('src', cards[cardId].cardImage);				//card should turn
+	checkForMatch(); 												//running checkForMatch function
 }
 
-flipCard(0);
-flipCard(2);
+/*flipCard(0);		//	prior unit 11
+flipCard(2);  */	//	prior unit 11
 
 
-//checkForMatch();
+function createBoard(){
+	for (var i=0; i< cards.length; i++) {
+		console.log(cards[i].rank); 								//my test if for loop works fine 
+		var cardElement = document.createElement('img');
+		cardElement.setAttribute("src", "images/back.png");
 
-/*var cardOne = cards[0];
-var cardTwo = cards[1];
-var cardThree = cards[2];
-var cardFour = cards[3];
-
-cardsInPlay.push(cardOne);
-
-console.log(cards); //test
-
-console.log(cardsInPlay); //test
-console.log("User flipped " + cardsInPlay[0]);
-
-cardsInPlay.push(cardTwo); 
-
-console.log("User flipped " + cardsInPlay[1]);
-
-if (cardsInPlay.length === 2) {
-	console.log("User flipped 2 cards.") //test
-	if (cardOne === cardTwo) {
-		alert("You found match!");
+		cardElement.setAttribute("data-id", i);
+	 	cardElement.addEventListener("click", flipCard);
+    	document.getElementById("game-board").appendChild(cardElement);
 	}
-	else {
-		alert("Sorry, try again.");
-	}
-}*/
+}
+
+createBoard();
