@@ -50,11 +50,13 @@ function checkForMatch(){
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			console.log("You found a match!");
 			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
-			alert("You found a match!");
+			//alert("You found a match!");
+			setTimeout(function(){ alert("You found a match!"); }, 100);
 		} else {
 			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
 			console.log("Sorry, try again.");
-			alert("Sorry, try again.");
+			//alert("Sorry, try again.");
+			setTimeout(function(){ alert("Sorry, try again."); }, 100);
 		}
 	}
 }
@@ -66,13 +68,13 @@ function flipCard(){												//delete 'cardId' parameter unit 11
 	console.log("suit: " + cards[cardId].suit);
 	console.log("cardImage: "+ cards[cardId].cardImage);
 	
-	//console.log("push test: "+ cardsInPlay[cardsInPlay.length-1]);	//testing what gets pushed
+	console.log("push test: "+ cardsInPlay[cardsInPlay.length-1]);	//testing what gets pushed
 	this.setAttribute('src', cards[cardId].cardImage);				//card should turn
 	checkForMatch(); 												//running checkForMatch function
 }
 
 /*flipCard(0);		//	prior unit 11
-flipCard(2);  */	//	prior unit 11
+flipCard(2);  	//	prior unit 11 */
 
 
 function createBoard(){
