@@ -45,6 +45,9 @@ cards = shuffle(cards);
 /*             array shuffle above   */
 var cardsInPlay = [];
 
+var wins = 0;   //var for keeping wins
+var losses = 0; //var for keeping losses
+
 function checkForMatch(){ 
 	if (cardsInPlay.length === 2){
 		if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -52,12 +55,16 @@ function checkForMatch(){
 			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
 			//alert("You found a match!");
 			setTimeout(function(){ alert("You found a match!"); }, 100);
+			wins+=1	//adds wins
 		} else {
 			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
 			console.log("Sorry, try again.");
 			//alert("Sorry, try again.");
 			setTimeout(function(){ alert("Sorry, try again."); }, 100);
+			losses+=1 //adds losses
 		}
+		console.log(`score: You won: ${wins} vs You lost: ${losses}`);
+		setTimeout(function(){alert(`score: You won: ${wins} vs You lost: ${losses}`);}, 500); //score tracker pop up window
 	}
 }
 
@@ -90,3 +97,16 @@ function createBoard(){
 }
 
 createBoard();
+
+
+// added game restart function
+function gameRestart(){
+	cardsInPlay = [];
+	var myParent = document.getElementById("game-board");
+	while (myParent.firstChild) {
+    	myParent.removeChild(myParent.firstChild);
+    }
+	cards = shuffle(cards);
+	createBoard();
+}
+
