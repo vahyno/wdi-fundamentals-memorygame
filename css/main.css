@@ -1,8 +1,6 @@
 
 body {
 	margin: 0; /*as per assigment to remove space around edges*/
-	/*background: gold; /*test color background*/
-	/*background-image: url("https://img-aws.ehowcdn.com/877x500p/photos.demandstudios.com/getty/article/92/1/481412413.jpg");*/
 	text-align: center;
 }
 
@@ -37,7 +35,7 @@ main {
 
 h1 {
 	font-family: "Raleway", sans-serif;
-	color: #FFFFFF: /*#0d2c40;*/
+	color: #FFFFFF;
 	letter-spacing: 1px;
 	font-weight: 400;
 	font-size: 45px;
@@ -56,7 +54,7 @@ h2 {
 
 a {
 	font-family: "Raleway", sans-serif;
-	color: #FFFFFF; /*#f15b31;*/
+	color: #FFFFFF;
 	letter-spacing: 1px;
 	font-weight: 600;
 	font-size: 18px;

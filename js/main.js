@@ -2,7 +2,6 @@ console.log("Up and running!");
 
 alert('Hello, How about a game of Pexeso?');
 
-//var cards = ["queen", "queen", "king", "king"];  //prior Unit 10 Assignments
 var cards = [
 	{
 		rank : "queen",
@@ -53,14 +52,12 @@ function checkForMatch(){
 		if (cardsInPlay[0] === cardsInPlay[1]) {
 			console.log("You found a match!");
 			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
-			//alert("You found a match!");
-			setTimeout(function(){ alert("You found a match!"); }, 100);
+			setTimeout(function(){ alert("You found a match!"); }, 100); //originally alert("You found a match!");
 			wins+=1	//adds wins
 		} else {
 			console.log(cardsInPlay[0] + " " + cardsInPlay[1]) //test what was flipped
 			console.log("Sorry, try again.");
-			//alert("Sorry, try again.");
-			setTimeout(function(){ alert("Sorry, try again."); }, 100);
+			setTimeout(function(){ alert("Sorry, try again."); }, 100); //originally alert("Sorry, try again.");
 			losses+=1 //adds losses
 		}
 		console.log(`score: You won: ${wins} vs You lost: ${losses}`);
@@ -79,10 +76,6 @@ function flipCard(){												//delete 'cardId' parameter unit 11
 	this.setAttribute('src', cards[cardId].cardImage);				//card should turn
 	checkForMatch(); 												//running checkForMatch function
 }
-
-/*flipCard(0);		//	prior unit 11
-flipCard(2);  	//	prior unit 11 */
-
 
 function createBoard(){
 	for (var i=0; i< cards.length; i++) {
